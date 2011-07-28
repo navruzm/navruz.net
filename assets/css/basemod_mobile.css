@@ -1,0 +1,125 @@
+@media screen, projection {
+    body {
+        background: #233a49;
+        padding: 0;
+    }
+
+    .page_margins {
+        background: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .page {
+        padding: 0;
+        border: 1px solid #061620;
+    }
+
+    #header, #nav, #main, #footer {
+        min-width: 200px;
+    }
+    #header {
+        background: #2E4C60 ;
+        padding: 10px 1em;
+        height:41px;
+    }
+
+    #header h2 {
+        font-weight:bold;
+        font-size:1.7em;
+        line-height:65%;
+        color:#000;
+    }
+    #header h2 a {
+        color: #f5f5f5;
+        font-size: 1em;
+        font-style: italic;
+        text-shadow: 0 2px 5px #0F0800;
+    }
+
+    #header h2 a:hover {
+        text-shadow: 0 2px 6px #000;
+        text-decoration: none;
+    }
+
+    #header span {color:#999999}
+    #main {
+        background-color: #f5f5f5;
+        padding: 0;
+    }    
+
+    #col1 { width: 0; }
+    #col1_content { padding: 0; }
+
+    #col2 { width: 0; }
+    #col2_content { padding: 0px; }
+
+    #col3 { margin: 0 2px; border:1px solid #ddd;border-width: 0 1px;background-color:#FFFFFF;}
+    #col3_content { padding: 4px; }
+
+    #col3_content h2{ font-size:1.5em;}
+
+    #footer { border-top:1px solid #2C484C;background-color: #060B0F;color: #fff;padding:10px 20px;}
+    #footer .page {padding: 0;font-size: 0.9em;}
+
+
+    .hlist {
+        background: #e8e8e8 url('../img/shiny_buttons/background.png') repeat;
+        border-bottom: none;
+    }
+
+    .hlist ul {
+        margin-left: 5px;
+        list-style: none;
+        border-right: 1px solid #aaaaaa;
+    }
+
+    .hlist ul li {
+        line-height: 1.6em;
+        float: left;
+        border:none;
+    }
+
+    .hlist ul li a,
+    .hlist ul li strong {
+        padding: 0.5em 1em; 
+        -moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.2);
+        text-shadow:0 1px 0 #FFFFFF;
+    }
+
+    .hlist ul li a:focus,
+    .hlist ul li a:hover,
+    .hlist ul li a:active {
+        color: #00677F;
+        background: inherit;
+    }
+
+    .hlist ul li.active {
+    }
+
+    .hlist ul li.active strong,
+    .hlist ul li.active a,
+    .hlist ul li.active a:focus,
+    .hlist ul li.active a:hover,
+    .hlist ul li.active a:active {
+        color: #4D87C7;
+        background: inherit;
+    }
+
+    #footer {
+        background: #383027;
+        color: #dcdcdc;
+    }
+
+    #footer a {
+        color: #f5f5f5;
+    }
+
+    #footer a:focus,
+    #footer a:hover,
+    #footer a:active {
+        color: #D1DCDF;
+    }
+
+}

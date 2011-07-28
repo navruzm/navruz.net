@@ -1,0 +1,173 @@
+/* 
+    Document   : content_admin
+    Created on : 09.Oca.2010, 00:00:18
+    Author     : Navruz
+*/
+#page-head {height: 20px;}
+#admin-home {
+    font-size: 30px;color: #fff;font-weight: bold;line-height: 40px;
+    font-family: "Trebuchet MS","Myriad Pro","Lucida Grande","Helvetica Neue",Arial,"Lucida Sans Unicode",sans-serif;
+}
+#admin-home:hover {text-decoration: none;}
+#user {color:#fff;font-size: 0.7em;position: absolute;right:10px;line-height: 17px;}
+#user a {color:#fff;}
+#user a:hover {text-decoration: none;}
+#side-nav {
+    list-style: none;
+    margin: 0;
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+#side-nav li {
+    list-style: none;
+    margin: 8px 0 8px 0;
+    padding: 0;
+    border-top: 1px solid #545454;
+    background: transparent url(../img/admin/li-bg.png) repeat-x;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+#side-nav li a {
+    margin: 0;
+    padding: 0 5px;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#side-nav li a img {
+
+}
+
+#side-nav li ul {
+    margin: 0;
+    background: #5e5e5e;
+}
+
+#side-nav li ul li {
+    margin: 0;
+    background: transparent;
+    padding: 3px;
+}
+#side-nav li ul li a {
+    border: none;
+    background: transparent;
+    color: #aaa;
+    height: 20px;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: 1em;
+    padding-right: 18px;
+    margin-left: 3px;
+}
+
+#side-nav li ul li a:hover {
+    color: #fff;
+}
+
+#side-nav li .current {
+    color: #333;
+    background: #fff;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#side-nav a:focus,
+#side-nav a:hover,
+#side-nav a:active {
+    text-decoration: none;
+    outline: none;
+}
+.yform.nobg {background: none;border:none;}
+.full div.type-text input.tagger {
+    float: left;
+    width: 90%
+}
+
+.tag-add {
+    background: transparent url(../img/add.png) center center no-repeat;
+    text-indent: -4444px;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    cursor: pointer;
+}
+
+.tag-list {
+    list-style: none;
+    clear: both;
+    padding: 0;
+}
+
+.tag-name {
+    background: transparent url(../img/tag.png) 0 0 no-repeat;
+    float: left;
+    cursor: pointer;
+    padding: 0 2px 2px 20px;
+    margin: 2px 5px 2px 0;
+    line-height: 16px;
+}
+
+.tag-list input {
+    display: none;
+}
+
+.comment-container{border:1px solid #9a9996;margin-bottom:10px;}
+.comment-title-1{background-color:#3f3f3f;padding:5px;color:#fff;font-size:1.2em;font-family:"Trebuchet MS","Myriad Pro","Lucida Grande","Helvetica Neue",Arial,"Lucida Sans Unicode",sans-serif}
+.comment-title-1 h1{
+    color:#fff;
+    font-size:1em;
+    display: inline;
+    font-family:"Trebuchet MS","Myriad Pro","Lucida Grande","Helvetica Neue",Arial,"Lucida Sans Unicode",sans-serif
+}
+.comment-title-1 h1 a{
+    color:#fff;
+}
+.comment-list{
+    padding:0px;
+    border-top:1px solid #9a9996;
+    background-color: #F5F5F5;
+}
+.comment-author {
+    background-color: #f5f5f5;
+    padding: 5px;
+    line-height:17px;
+    height: 35px;
+}
+.comment-content {
+    padding: 5px;
+    border-top:1px solid #dcdcdc;
+    background-color: #fff;
+}
+.comment-content .date {
+    float:right;
+    color:#888888;
+    font-size:0.9em;
+}
+.comment-title {
+    color:#888888;
+    font-size:0.9em;
+}
+.comment-button {
+    display: inline-block;
+    border:1px solid #6d6869;
+    background-color: #fbe6ec;
+    padding: 2px 5px;
+    font-size: 0.9em;
+}
+.dashboard-menu {}
+.dashboard-menu li{float:left;list-style: none;margin-bottom: 10px;}
+.dashboard-menu li a{padding: 5px;border:1px solid #fff;text-align: center;width:88px;display: block;border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;}
+.dashboard-menu li a:hover{background-color: #f9f9f9;border:1px solid #dcdcdc;text-decoration: none;}
+.dashboard-menu li a img{display: block;padding: 0 20px;}
+.dashboard-menu li a span{display: inline-block;height:36px;vertical-align: middle;}

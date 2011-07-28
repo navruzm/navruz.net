@@ -1,0 +1,8 @@
+<?php  if(!defined('BASEPATH')) exit('No direct script access allowed');
+
+$config['mailtype'] = 'html';
+$config['protocol'] = 'smtp';
+$config['smtp_host'] = 'ssl://smtp.siteadi.com';
+$config['smtp_port'] = 587;
+$config['smtp_user'] = 'mail@siteadi.com';
+$config['smtp_pass'] = 'sifre';

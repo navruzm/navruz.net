@@ -1,0 +1,40 @@
+@media screen, projection {
+
+/*------------------------------------------------------------------------------------------------------*/
+
+ /**
+  * Global fixes for YAML's form construction set
+  *
+  * @workaround
+  * @affected IE 5.x/Win, IE6, IE7
+  * @css-for IE 5.x/Win, IE6, IE7
+  * @valid no
+  */
+
+  .yform,
+  .yform div,
+  .yform div * { zoom:1; }
+
+ /**
+  * Forms Fieldset/Legend-Bug in IE
+  * @see http://www.mattheerema.com/web-design/2006/04/getting-fieldset-backgrounds-and-legends-to-behave-in-ie/
+  *
+  * @workaround
+  * @affected IE 5.x/Win, IE6, IE7, IE8
+  * @css-for IE 5.x/Win, IE6, IE7, IE8
+  * @valid no
+  */
+
+  /* all IE */
+  .yform { padding-top:0\9; }
+  .yform fieldset { padding:0 5px\9; padding-top:1em\9; }
+  .yform legend { position:absolute\9; top:-.5em\9; *left:0\9; }
+  .yform fieldset { position:relative\9; overflow:visible\9;  margin-top:1.5em\9; zoom:1; }
+
+  /* IE5.x, IE6 & IE7 */
+  .yform legend { *padding:0 5px; }
+  .yform fieldset { *padding-top:1.5em; }
+
+  /* IE5.x & IE6 */
+  * html .yform { padding-top:10px; }
+}

@@ -1,0 +1,30 @@
+<IfModule mod_expires.c>
+    <FilesMatch "\.(gif|jpg|JPG|jpeg|png|swf|css|js|html?|xml|txt)$">
+	ExpiresActive On
+	ExpiresDefault "access plus 10 years"
+    </FilesMatch>
+</IfModule>
+
+<ifModule mod_headers.c>
+  Header unset ETag
+</ifModule>
+FileETag None
+
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^example\.com [NC]
+RewriteRule ^(.*)$ http://www.example.com/$1 [L,R=301]
+
+RewriteRule css/(.*).css$      assets/minify/index.php?css=$1
+RewriteRule js/(.*).js$        assets/minify/index.php?js=$1
+
+
+RewriteRule usr-img/(.*).jpg$        media/users/$1.jpg
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+RewriteCond %{THE_REQUEST} \?(ref=.*)?\ HTTP [NC]
+RewriteRule .? http://www.example.com/%{REQUEST_URI}? [R=301,L]

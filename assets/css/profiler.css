@@ -1,0 +1,117 @@
+@media screen, projection {
+
+    #profiler {
+        background: #e5e5e5;
+        bottom: 0;
+        height: 30px;
+        position: fixed;
+        z-index: 11;
+        width:100%;
+        border-top: 1px solid #fcfcfc;
+    }
+
+    div.profiler-tabs {
+        display: none;
+        bottom: 30px;
+        position: fixed;
+        z-index: 11;
+        width: 80em;
+        min-width: 740px;
+        overflow-y: scroll;
+        max-height: 300px;
+        background: #dcdcdc;
+        border-top: 4px solid #061620;
+    }
+
+    div.pro-tab {
+        display: none;
+        margin: 10px 10px 0 10px;
+    }
+
+    div.pro-tab.current {
+        display: block;
+    }
+
+    ul#pro-tc li {
+        float: left;
+        padding: 5px;
+        line-height: 20px;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    ul#pro-tc li#close {
+        float:right;
+        cursor:pointer;
+    }
+
+    /*
+    ul.tabs-control {
+        margin: 0 !important;
+        padding: 0;
+        height: 30px;
+        border-top: 1px solid #666;
+    }
+
+
+    ul.tabs-control li {
+        float: left;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    ul.tabs-control a {
+        float: left;
+        font-size: 13px;
+        display: block;
+        padding: 5px 30px;
+        text-decoration: none;
+        border: 1px solid #666;
+        border-top: 0px;
+        height: 18px;
+        background-color: #efefef;
+        color: #777;
+        margin-right: 2px;
+        position: relative;
+        top: 1px;
+    }
+
+    ul.tabs-control a:hover {
+        background-color: #F7F7F7;
+        color: #333;
+    }
+
+
+    ul.tabs-control a.current {
+        background-color: #ddd;
+        border-top: 2px solid #ddd;
+        color: #000;
+        cursor: default;
+    }
+
+
+    /*div.profiler-tabs {
+        display: none;
+        bottom: 30px;
+        position: fixed;
+        z-index: 11;
+        width:80em;
+        min-width:740px;
+        overflow:scroll;
+        max-height:300px;
+    }
+
+    div.profiler-tabs div {
+        display: none;
+        border: 1px solid #666;
+        border-width: 1px 1px 0 1px;
+        min-height: 150px;
+        background-color: #ddd;
+    }
+
+    div.profiler-tabs div div {
+        display: block;
+    }*/
+
+}

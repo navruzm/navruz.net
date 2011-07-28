@@ -1,0 +1,17 @@
+syntax: regexp
+
+^.htaccess
+robots.txt
+favicon.ico
+^media/.*(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)
+^media/files/(?!.*\.(html|htaccess)$).+
+^nbproject
+^logs/.*php
+^cache/min/(?!.*\.html$).+
+^cache/data/(?!.*\.html$).+
+^cache/db/(?!.*\.html$).+
+^cache/site/(?!.*\.html$).+
+^cache/captcha/(?!.*\.html$).+
+.*(orig)
+^application/config/production/.*php
+^application/modules/connect/config/facebook\.php

@@ -1,0 +1,234 @@
+/* root element for tabs  */
+
+/* root element for tabs  */
+.tabs-link {
+    margin:0 !important;
+    padding:0;
+    height:30px;
+
+}
+
+/* single tab */
+.tabs-link li {
+    float:left;
+    padding:0;
+    margin:0;
+    list-style-type:none;
+}
+
+/* link inside the tab. uses a background image */
+.tabs-link a {
+    float:left;
+    font-size:13px;
+    display:block;
+    padding:5px 30px;
+    text-decoration:none;
+    border:1px solid #ddd;
+    border-bottom:0px;
+    height:18px;
+    background-color:#e4e4e4;
+    color:#777;
+    margin-right:2px;
+    position:relative;
+    top:1px;
+    outline:0;
+    -moz-border-radius:4px 4px 0 0;
+}
+
+.tabs-link a:hover {
+    background-color:#F7F7F7;
+    color:#333;
+}
+
+/* selected tab */
+.tabs-link a.current,
+.tabs-link a.current:hover{
+    background-color:#f4f4f4;
+    border-bottom:none;
+    color:#000;
+    cursor:default;
+    text-decoration: none;
+}
+
+
+/* tab pane */
+#tabs .pane {
+    display:none;
+    border:1px solid #666;
+    border-width:0 1px 1px 1px;
+    min-height:150px;
+    padding:15px 20px;
+    background-color:#ddd;
+}
+
+
+/* date vs */
+
+/* For the details, see: http://flowplayer.org/tools/dateinput/index.html#skinning */
+
+/* the input field */
+#datepicker .date {
+    border:1px solid #ccc;
+    font-size:18px;
+    padding:4px;
+    text-align:center;
+    width:194px;
+    -moz-box-shadow:0 0 10px #eee inset;
+}
+
+/* calendar root element */
+#calroot {
+    /* place on top of other elements. set a higher value if nessessary */
+    z-index:1;
+
+    margin-top:-1px;
+    width:198px;
+    padding:2px;
+    background-color:#fff;
+    font-size:11px;
+    border:1px solid #ccc;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-box-shadow: 0 0 15px #666;
+    -webkit-box-shadow: 0 0 15px #666;
+}
+
+/* head. contains title, prev/next month controls and possible month/year selectors */
+#calhead {
+    padding:2px 0;
+    height:22px;
+}
+
+#caltitle {
+    font-size:14px;
+    color:#0150D1;
+    float:left;
+    text-align:center;
+    width:155px;
+    line-height:20px;
+    text-shadow:0 1px 0 #ddd;
+}
+
+#calnext, #calprev {
+    display:block;
+    width:20px;
+    height:20px;
+    background:transparent url(prev.gif) no-repeat scroll center center;
+    float:left;
+    cursor:pointer;
+}
+
+#calnext {
+    background-image:url(next.gif);
+    float:right;
+}
+
+#calprev.caldisabled, #calnext.caldisabled {
+    visibility:hidden;
+}
+
+/* year/month selector */
+#caltitle select {
+    font-size:10px;
+}
+
+/* names of the days */
+#caldays {
+    height:14px;
+    border-bottom:1px solid #ddd;
+}
+
+#caldays span {
+    display:block;
+    float:left;
+    width:28px;
+    text-align:center;
+}
+
+/* container for weeks */
+#calweeks {
+    background-color:#fff;
+    margin-top:4px;
+}
+
+/* single week */
+.calweek {
+    clear:left;
+    height:22px;
+}
+
+/* single day */
+.calweek a {
+    display:block;
+    float:left;
+    width:27px;
+    height:20px;
+    text-decoration:none;
+    font-size:11px;
+    margin-left:1px;
+    text-align:center;
+    line-height:20px;
+    color:#666;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+/* different states */
+.calweek a:hover, .calfocus {
+    background-color:#ddd;
+}
+
+/* sunday */
+a.calsun {
+    color:red;
+}
+
+/* offmonth day */
+a.caloff {
+    color:#ccc;
+}
+
+a.caloff:hover {
+    background-color:rgb(245, 245, 250);
+}
+
+
+/* unselecteble day */
+a.caldisabled {
+    background-color:#efefef !important;
+    color:#ccc	!important;
+    cursor:default;
+}
+
+/* current day */
+#calcurrent {
+    background-color:#498CE2;
+    color:#fff;
+}
+
+/* today */
+#caltoday {
+    background-color:#333;
+    color:#fff;
+}
+
+
+.tooltip {
+    display:none;
+    background:#3A3535;
+    padding:10px;
+    font-size:11px;
+    color:#fff;
+}
+
+/* a .label element inside tooltip */
+.tooltip .label {
+    color:yellow;
+    width:35px;
+}
+
+.tooltip a {
+    color:#ad4;
+    font-size:11px;
+    font-weight:bold;
+}

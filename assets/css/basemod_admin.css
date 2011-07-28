@@ -1,0 +1,62 @@
+/*@charset "UTF-8";*/
+
+@media screen, projection {
+
+    body {
+        background: #3F3F3F;
+        padding: 0;
+    }
+
+    .page_margins {
+        background: inherit;
+        max-width: 100%;
+    }
+
+    .page {
+        padding: 0;
+
+    }
+
+    #main {
+        padding: 0;
+    }
+
+    #main .page {
+        background-color: #fdfdfd;
+    }
+
+    #col1 {
+        width: 20%;
+        background: #545454 url(../img/admin/sidebar.png) right center repeat-y;
+        /*min-width: 240px;*/
+    }
+
+    #col1_content {
+        padding:0 10px 0 20px;
+    }
+
+    #col2, #col2_content {
+        display: none;
+    }
+
+    #col3 {
+        margin-left:20%;
+        margin-right: 0;
+    }
+
+    #col3_content {
+        padding: 10px 10px 0 10px;
+        /*border-left:1px solid #ddd;*/
+    }
+
+    #footer {
+        padding: 0;
+    }
+
+    #footer .page {
+        padding: 10px 20px;
+    }
+
+    #page-head {background: #2B2B2C;color:#fff;padding: 10px;font-size: 1.2em;font-weight: bold;}
+
+}
