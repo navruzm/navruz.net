@@ -116,19 +116,26 @@ add_jquery('$("#tabs").tabs();');
             </div>
         </div>
         <div class="subcolumns">
-            <div class="c33l">
-                <div class="subcl type-text">
-                    <?php echo form_item('disqus', 'Disqus Hesabı', 'input', array('value' => set_value('disqus', get_option('disqus')))); ?>
-                </div>
-            </div>
-            <div class="c33l">
+            <div class="c50l">
                 <div class="subcl type-text">
                     <?php echo form_item('feedburner_username', 'Feedburner Kullanıcı Adı', 'input', array('value' => set_value('feedburner_username', get_option('feedburner_username')))); ?>
                 </div>
             </div>
-            <div class="c33r">
+            <div class="c50r">
                 <div class="subcl type-text">
                     <?php echo form_item('analytics_id', 'Google Analytics ID (UA-XXXXX-X)', 'input', array('value' => set_value('analytics_id', get_option('analytics_id')))); ?>
+                </div>
+            </div>
+        </div>
+        <div class="subcolumns">
+            <div class="c50l">
+                <div class="subcl type-text">
+                    <?php echo form_item('disqus', 'Disqus Hesabı', 'input', array('value' => set_value('disqus', get_option('disqus')))); ?>
+                </div>
+            </div>
+            <div class="c50l">
+                <div class="subcl type-text">
+                    <?php echo form_item('disqus_api_key', 'Disqus API Key', 'input', array('value' => set_value('disqus_api_key', get_option('disqus_api_key')))); ?>
                 </div>
             </div>
         </div>

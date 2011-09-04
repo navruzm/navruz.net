@@ -48,13 +48,13 @@ if (strpos($content, '<code class="') !== FALSE)
     <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="navruzm" data-lang="tr">Tweet</a>
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     <g:plusone size="medium"></g:plusone>
-    <?php add_js('http://apis.google.com/js/plusone.js','link') ?>
+    <?php add_js('http://apis.google.com/js/plusone.js', 'link') ?>
     <span id="fb-root"></span>
     <script src="http://connect.facebook.net/tr_TR/all.js#appId=201644383183217&amp;xfbml=1"></script>
     <fb:like href="" send="true" layout="button_count" width="450" show_faces="true" font="trebuchet ms"></fb:like>
 </div>
 <div id="rss">
-    <?php echo anchor('http://feeds.feedburner.com/' . get_option('feedburner_username'),'Yazılarımızı RSS ile takip edebilirsiniz.'); ?>
+    <?php echo anchor('http://feeds.feedburner.com/' . get_option('feedburner_username'), 'Yazılarımızı RSS ile takip edebilirsiniz.'); ?>
 </div>
 <div class="title">Yazar Hakkında</div>
 <div class="floatbox">
@@ -64,7 +64,30 @@ if (strpos($content, '<code class="') !== FALSE)
 <?php echo related($id); ?>
 <?php if ($comments_enabled == 1 && get_option('disqus') != ''): ?>
     <div class="title">Yorumlar</div>
-    <div id="disqus_thread"></div>
+    <div id="disqus_thread">
+        <?php if (count($comments)): ?>
+            <div id="dsq-content">
+                <ul id="dsq-comments">
+                    <?php foreach ($comments as $comment) : ?>
+                        <li id="dsq-comment-<?php echo $comment->id; ?>">
+                            <div id="dsq-comment-header-<?php echo $comment->id; ?>" class="dsq-comment-header">
+                                <cite id="dsq-cite-<?php echo $comment->id; ?>">
+                                    <?php if (isset($comment->author->url)) : ?>
+                                        <a id="dsq-author-user-<?php echo $comment->id; ?>" href="<?php echo $comment->author->url; ?>" target="_blank" rel="nofollow"><?php echo $comment->author->name; ?></a>
+                                    <?php else : ?>
+                                        <span id="dsq-author-user-<?php echo $comment->id; ?>"><?php echo $comment->author->name; ?></span>
+                                    <?php endif; ?>
+                                </cite>
+                            </div>
+                            <div id="dsq-comment-body-<?php echo $comment->id; ?>" class="dsq-comment-body">
+                                <div id="dsq-comment-message-<?php echo $comment->id; ?>" class="dsq-comment-message"><?php echo $comment->message; ?></div>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+    </div>
     <script type="text/javascript">
         var disqus_shortname = '<?php echo get_option('disqus'); ?>';
         var disqus_identifier = 'post_<?php echo $id; ?>';
