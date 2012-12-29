@@ -1,0 +1,11 @@
+*/config/development
+*/config/production
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+sitemap.xml
+sitemap.xml.gz
+robots.txt
+humans.txt
+favicon.ico

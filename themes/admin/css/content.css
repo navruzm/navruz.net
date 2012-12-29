@@ -1,0 +1,26 @@
+body {font-family: Ubuntu,Arial, "Trebuchet MS","Myriad Pro","Lucida Grande",sans-serif;padding-top:60px;}
+/*a { color:#4083A9; background:transparent; text-decoration:none; }
+a:visited  {  color:#4083A9;}
+
+a:focus { text-decoration:underline; color:#000;background: none;outline: 0 none; }
+a:hover,
+a:active { color:#3B475D; text-decoration:underline; outline: 0 none; }
+*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: Ubuntu, "Trebuchet MS","Myriad Pro","Lucida Grande","Helvetica Neue",sans-serif;
+}
+#sidemenu a{padding: 7px 5px;color:#6B6868;text-shadow:#fff 0 1px ;text-decoration: none;display: block;}
+#sidemenu a:hover,#sidemenu a:focus{}
+#sidemenu {color:#fff;list-style: none;margin: 0;}
+#sidemenu li{list-style: none;margin: 0;padding: 0;text-align: left;border-top:1px solid #efefef;border-bottom:1px solid #efefef;}
+#sidemenu li img{vertical-align: middle;margin: 0 5px;}
+#sidemenu li.current{background-color:#E0DEDE;border-top:1px solid #C9C5C5;}
+#sidemenu li ul{background-color:#FCFCFC;margin:0;border-top:1px solid #C9C5C5;}
+#sidemenu li ul li{padding-left: 15px;}
+#sidemenu li ul li a{padding: 3px 5px;}
+.well{padding:0;}
+.action {text-align: right;}
+.action .btn {font-size: 11px;padding: 3px 12px 3px;}
+.sort{cursor: move;width:9px;}
+#tags_tag {border:none !important;box-shadow:none;margin:0;}
+.close {cursor: pointer;}

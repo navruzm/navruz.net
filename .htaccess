@@ -1,0 +1,34 @@
+<IfModule mod_expires.c>
+    <FilesMatch "\.(gif|jpg|JPG|jpeg|png|swf|css|js|html?|xml|txt)$">
+	ExpiresActive On
+	ExpiresDefault "access plus 10 years"
+    </FilesMatch>
+</IfModule>
+
+<ifModule mod_headers.c>
+  Header unset ETag
+</ifModule>
+
+FileETag None
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    RewriteRule ^compress.css           assets/minify/index.php?%{QUERYSTRING} [QSA,L]
+    RewriteRule ^compress.js            assets/minify/index.php?%{QUERYSTRING} [QSA,L]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule (.*)\.css$            assets/minify/index.php?css=assets/$1.css [QSA,L]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule (.*)\.js$            assets/minify/index.php?js=assets/$1.js [QSA,L]
+    
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+<IfModule !mod_rewrite.c>
+    # Without mod_rewrite, route 404's to the front controller
+    ErrorDocument 404 /index.php
+</IfModule>

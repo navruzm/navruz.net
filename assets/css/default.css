@@ -1,0 +1,154 @@
+.bold
+{
+    font-weight: bold;
+}
+
+.italic
+{
+    font-style: italic;
+}
+
+.underline
+{
+    text-decoration: underline;
+}
+
+.strikethrough
+{
+    text-decoration: line-through;
+}
+
+.subscript
+{
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+.superscript
+{
+    vertical-align: super;
+    font-size: smaller;
+}
+
+/**
+ * Font faces.
+*/
+
+.font-comic
+{
+    font-family: 'Comic Sans MS';
+}
+
+.font-courier
+{
+    font-family: 'Courier New';
+}
+
+.font-times
+{
+    font-family: 'Times New Roman';
+}
+
+/**
+ * Indentation.
+*/
+
+.indent1
+{
+    margin-left: 40px;
+}
+
+.indent2
+{
+    margin-left: 80px;
+}
+
+.indent3
+{
+    margin-left: 120px;
+}
+
+/**
+ * Alignment.
+*/
+
+.text-left
+{
+    text-align: left;
+}
+
+.text-right
+{
+    text-align: right;
+}
+
+.text-center
+{
+    text-align: center;
+}
+
+.text-full
+{
+    text-align: justify;
+}
+
+/*color*/
+.red,
+.red:visited {color:#C00000;}
+.blue,
+.blue:visited {color:#1F497D;}
+.green,
+.green:visited {color:#76923C;}
+.orange,
+.orange:visited {color:#E36C09;}
+.violett,
+.violett:visited {color:#5F497A;}
+.turquise,
+.turquise:visited {color:#31859B;}
+.grey,
+.grey:visited {color:#6F6F6F;}
+.white,
+.white:visited {color:#6F6F6F;}
+
+.red-bg{background-color:#C00000;}
+.blue-bg{background-color:#1F497D;}
+.green-bg{background-color:#76923C;}
+.orange-bg{background-color:#E36C09;}
+.violett-bg{background-color:#5F497A;}
+.turquise-bg{background-color:#31859B;}
+.grey-bg{background-color:#6F6F6F;}
+.white-bg{background-color:#6F6F6F;}
+
+
+/**
+ * Font colors.
+*/
+.FontColor1
+{
+    color: #ff9900;
+}
+
+.FontColor2
+{
+    color: #0066cc;
+}
+
+.FontColor3
+{
+    color: #ff0000;
+}
+
+.FontColor1BG
+{
+    background-color: #ff9900;
+}
+
+.FontColor2BG
+{
+    background-color: #0066cc;
+}
+
+.FontColor3BG
+{
+    background-color: #ff0000;
+}

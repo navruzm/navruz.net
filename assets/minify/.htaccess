@@ -1,0 +1,5 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule (.*).css$       index.php?css=$1
+RewriteRule (.*).js$        index.php?js=$1
