@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -73,12 +73,12 @@ class CI_DB_driver {
 
 
 	/**
-	 * Constructor. Accepts one parameter containing the database
+	 * Constructor.  Accepts one parameter containing the database
 	 * connection settings.
 	 *
 	 * @param array
 	 */
-	function CI_DB_driver($params)
+	function __construct($params)
 	{
 		if (is_array($params))
 		{
@@ -114,7 +114,7 @@ class CI_DB_driver {
 		// Connect to the database and set the connection ID
 		$this->conn_id = ($this->pconnect == FALSE) ? $this->db_connect() : $this->db_pconnect();
 
-		// No connection resource? Throw an error
+		// No connection resource?  Throw an error
 		if ( ! $this->conn_id)
 		{
 			log_message('error', 'Unable to connect to the database');
@@ -199,7 +199,7 @@ class CI_DB_driver {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Database Version Number. Returns a string containing the
+	 * Database Version Number.  Returns a string containing the
 	 * version of the database being used
 	 *
 	 * @access	public
@@ -218,7 +218,7 @@ class CI_DB_driver {
 
 		// Some DBs have functions that return the version, and don't run special
 		// SQL queries per se. In these instances, just return the result.
-		$driver_version_exceptions = array('oci8', 'sqlite');
+		$driver_version_exceptions = array('oci8', 'sqlite', 'cubrid');
 
 		if (in_array($this->dbdriver, $driver_version_exceptions))
 		{
@@ -237,7 +237,7 @@ class CI_DB_driver {
 	 * Execute the query
 	 *
 	 * Accepts an SQL string as input and returns a result object upon
-	 * successful execution of a "read" type query. Returns boolean TRUE
+	 * successful execution of a "read" type query.  Returns boolean TRUE
 	 * upon successful execution of a "write" type query. Returns boolean
 	 * FALSE upon failure, and if the $db_debug variable is set to TRUE
 	 * will raise an error.
@@ -265,7 +265,13 @@ class CI_DB_driver {
 			$sql = preg_replace("/(\W)".$this->swap_pre."(\S+?)/", "\\1".$this->dbprefix."\\2", $sql);
 		}
 
-		// Is query caching enabled? If the query is a "read type"
+		// Compile binds if needed
+		if ($binds !== FALSE)
+		{
+			$sql = $this->compile_binds($sql, $binds);
+		}
+
+		// Is query caching enabled?  If the query is a "read type"
 		// we will load the caching class and return the previously
 		// cached query if it exists
 		if ($this->cache_on == TRUE AND stristr($sql, 'SELECT'))
@@ -280,13 +286,7 @@ class CI_DB_driver {
 			}
 		}
 
-		// Compile binds if needed
-		if ($binds !== FALSE)
-		{
-			$sql = $this->compile_binds($sql, $binds);
-		}
-
-		// Save the query for debugging
+		// Save the  query for debugging
 		if ($this->save_queries == TRUE)
 		{
 			$this->queries[] = $sql;
@@ -314,7 +314,7 @@ class CI_DB_driver {
 				$error_msg = $this->_error_message();
 
 				// We call this function in order to roll-back queries
-				// if transactions are enabled. If we don't call this here
+				// if transactions are enabled.  If we don't call this here
 				// the error message will trigger an exit, causing the
 				// transactions to remain in limbo.
 				$this->trans_complete();
@@ -385,7 +385,7 @@ class CI_DB_driver {
 		// oci8 vars must be set before calling this
 		$RES->num_rows	= $RES->num_rows();
 
-		// Is query caching enabled? If so, we'll serialize the
+		// Is query caching enabled?  If so, we'll serialize the
 		// result object and save it to a cache file.
 		if ($this->cache_on == TRUE AND $this->_cache_init())
 		{
@@ -435,7 +435,7 @@ class CI_DB_driver {
 
 	/**
 	 * Simple Query
-	 * This is a simplified version of the query() function. Internally
+	 * This is a simplified version of the query() function.  Internally
 	 * we only use it when running transaction commands since they do
 	 * not require all the features of the main query() function.
 	 *
@@ -718,7 +718,7 @@ class CI_DB_driver {
 	/**
 	 * Primary
 	 *
-	 * Retrieves the primary key. It assumes that the row in the first
+	 * Retrieves the primary key.  It assumes that the row in the first
 	 * position is the primary key
 	 *
 	 * @access	public
@@ -1015,8 +1015,14 @@ class CI_DB_driver {
 		else
 		{
 			$args = (func_num_args() > 1) ? array_splice(func_get_args(), 1) : null;
-
-			return call_user_func_array($function, $args);
+			if (is_null($args))
+			{
+				return call_user_func($function);
+			}
+			else
+			{
+				return call_user_func_array($function, $args);
+			}
 		}
 	}
 
@@ -1216,8 +1222,8 @@ class CI_DB_driver {
 	 * This function is used extensively by the Active Record class, and by
 	 * a couple functions in this class.
 	 * It takes a column or table name (optionally with an alias) and inserts
-	 * the table prefix onto it. Some logic is necessary in order to deal with
-	 * column names that include the path. Consider a query like this:
+	 * the table prefix onto it.  Some logic is necessary in order to deal with
+	 * column names that include the path.  Consider a query like this:
 	 *
 	 * SELECT * FROM hostname.database.table.column AS c FROM hostname.database.table
 	 *
@@ -1261,16 +1267,19 @@ class CI_DB_driver {
 
 		// If the item has an alias declaration we remove it and set it aside.
 		// Basically we remove everything to the right of the first space
-		$alias = '';
 		if (strpos($item, ' ') !== FALSE)
 		{
-			$alias = strstr($item, " ");
+			$alias = strstr($item, ' ');
 			$item = substr($item, 0, - strlen($alias));
+		}
+		else
+		{
+			$alias = '';
 		}
 
 		// This is basically a bug fix for queries that use MAX, MIN, etc.
 		// If a parenthesis is found we know that we do not need to
-		// escape the data or add a prefix. There's probably a more graceful
+		// escape the data or add a prefix.  There's probably a more graceful
 		// way to deal with this, but I'm not thinking of it -- Rick
 		if (strpos($item, '(') !== FALSE)
 		{
@@ -1285,7 +1294,7 @@ class CI_DB_driver {
 			$parts	= explode('.', $item);
 
 			// Does the first segment of the exploded item match
-			// one of the aliases previously identified? If so,
+			// one of the aliases previously identified?  If so,
 			// we have nothing more to do other than escape the item
 			if (in_array($parts[0], $this->ar_aliased_tables))
 			{
@@ -1304,7 +1313,7 @@ class CI_DB_driver {
 				return $item.$alias;
 			}
 
-			// Is there a table prefix defined in the config file? If not, no need to do anything
+			// Is there a table prefix defined in the config file?  If not, no need to do anything
 			if ($this->dbprefix != '')
 			{
 				// We now add the table prefix based on some logic.
@@ -1358,7 +1367,7 @@ class CI_DB_driver {
 			return $item.$alias;
 		}
 
-		// Is there a table prefix? If not, no need to insert it
+		// Is there a table prefix?  If not, no need to insert it
 		if ($this->dbprefix != '')
 		{
 			// Verify table prefix and replace if necessary
@@ -1382,9 +1391,20 @@ class CI_DB_driver {
 		return $item.$alias;
 	}
 
+	// --------------------------------------------------------------------
+
+	/**
+	 * Dummy method that allows Active Record class to be disabled
+	 *
+	 * This function is used extensively by every db driver.
+	 *
+	 * @return	void
+	 */
+	protected function _reset_select()
+	{
+	}
 
 }
-
 
 /* End of file DB_driver.php */
 /* Location: ./system/database/DB_driver.php */

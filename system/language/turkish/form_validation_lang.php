@@ -1,4 +1,5 @@
 <?php
+
 $lang['required']	 		= "%s alanının doldurulması zorunludur.";
 $lang['isset']				= "%s alanına bir veri girilmelidir.";
 $lang['valid_email']		= "%s alanına geçerli bir eposta adresi girilmelidir.";
@@ -16,8 +17,13 @@ $lang['is_numeric']			= "%s alanına sadece sayı(lar) girilmelidir.";
 $lang['integer']			= "%s alanına sadece tam sayı girilmelidir.";
 $lang['regex_match']		= "%s alanına uygun formatta veri girmelisiniz.";
 $lang['matches']			= "%s alanındaki veri %s alanındaki veri ile eşleşmiyor.";
+$lang['is_unique'] 			= "%s alanına eşsiz bir değer girmelisiniz.";
 $lang['is_natural']			= "%s alanına sadece sayı(lar) girilmelidir.";
 $lang['is_natural_no_zero']	= "%s alanına sadece sıfırdan büyük sayı girilmelidir.";
-$lang['decimal']			= "The %s field must contain a decimal number.";
-$lang['less_than']			= "The %s field must contain a number less than %s.";
-$lang['greater_than']		= "The %s field must contain a number greater than %s.";
+$lang['decimal']			= "%s alanına sadece ondalık sayı girilmelidir.";
+$lang['less_than']			= "%s alanına sadece %s sayısından küçük değer girilmelidir.";
+$lang['greater_than']		= "%s alanına sadece %s sayısından büyük değer girilmelidir.";
+
+
+/* End of file form_validation_lang.php */
+/* Location: ./system/language/turkish/form_validation_lang.php */

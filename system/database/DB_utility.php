@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * Code Igniter
  *
@@ -33,7 +33,7 @@ class CI_DB_utility extends CI_DB_forge {
 	 * Grabs the CI super object instance so we can access it.
 	 *
 	 */
-	function CI_DB_utility()
+	function __construct()
 	{
 		// Assign the main database object to $this->db
 		$CI =& get_instance();
@@ -342,10 +342,10 @@ class CI_DB_utility extends CI_DB_forge {
 
 		// ------------------------------------------------------
 
-		// Is the encoder supported? If not, we'll either issue an
+		// Is the encoder supported?  If not, we'll either issue an
 		// error or use plain text depending on the debug settings
 		if (($prefs['format'] == 'gzip' AND ! @function_exists('gzencode'))
-		OR ($prefs['format'] == 'zip' AND ! @function_exists('gzcompress')))
+		OR ($prefs['format'] == 'zip'  AND ! @function_exists('gzcompress')))
 		{
 			if ($this->db->db_debug)
 			{
